@@ -1,0 +1,8 @@
+browser.jar:
+   content/browser/customsidebar/sidebar.xhtml              (content/sidebar.xhtml)
+   resource/modules/CustomSidebar.jsm                       (CustomSidebar.jsm)
+   resource/modules/PeerService.jsm                                  (PeerService.jsm)
+   resource/modules/CustomSidebarWorker.js                   (CustomSidebarWorker.js)
+   content/browser/customsidebar/customSidebarContent.js                   (content/customSidebarContent.js)
+
+

@@ -12,6 +12,9 @@ document.addEventListener(
       // eslint-disable-next-line complexity
       .addEventListener("command", event => {
         switch (event.target.id) {
+          case "cmd_viewCustomSidebar":
+            SidebarController.toggle("viewCustomSidebar");
+            break;
           case "cmd_newNavigator":
             OpenBrowserWindow();
             break;
@@ -293,6 +296,9 @@ document.addEventListener(
           break;
         case "key_gotoHistory":
           SidebarController.toggle("viewHistorySidebar");
+          break;
+        case "viewCustomSidebarKb":
+          SidebarController.toggle("viewCustomSidebar");
           break;
 
         case "key_selectTab1":

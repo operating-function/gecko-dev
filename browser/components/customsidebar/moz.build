@@ -1,0 +1,20 @@
+# -*- Mode: python; indent-tabs-mode: nil; tab-width: 40 -*-
+# vim: set filetype=python;
+
+# DIRS = None
+
+JAR_MANIFESTS += ["jar.mn"]
+
+# Not using XPIDL
+# XPIDL_SOURCES += []
+# XPIDL_MODULE = "customsidebar"
+
+EXTRA_JS_MODULES += [
+    "CustomSidebar.jsm",
+    "CustomSidebarWorker.js",
+    "PeerService.jsm",
+]
+
+with Files("**"):
+    BUG_COMPONENT = ("Firefox", "Custom Sidebar")
+

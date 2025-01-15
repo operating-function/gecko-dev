@@ -19,6 +19,7 @@
     <command id="cmd_newNavigator" />
     <command id="cmd_handleBackspace" />
     <command id="cmd_handleShiftBackspace" />
+    <command id="cmd_viewCustomSidebar" />
 
     <command id="cmd_newNavigatorTab" />
     <command id="cmd_newNavigatorTabNoEvent" />
@@ -122,6 +123,19 @@
          modifiers="accel" reserved="true"/>
     <key id="key_newNavigatorTab" data-l10n-id="tab-new-shortcut" modifiers="accel"
          command="cmd_newNavigatorTabNoEvent" reserved="true"/>
+
+    <key id="key_gotoHistory"
+         data-l10n-id="history-sidebar-shortcut"
+#ifdef XP_MACOSX
+         modifiers="accel,shift"
+#else
+         modifiers="accel"
+#endif
+        />
+
+    <key id="viewCustomSidebarKb" data-l10n-id="sidebar-custom-shortcut" 
+         command="cmd_viewCustomSidebar"
+         modifiers="accel,alt"/>
     <key id="focusURLBar" data-l10n-id="location-open-shortcut" command="Browser:OpenLocation"
          modifiers="accel"/>
 #ifndef XP_MACOSX

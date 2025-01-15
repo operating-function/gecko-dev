@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window id="sidebar-window"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:html="http://www.w3.org/1999/xhtml">
+  
+  <script type="application/javascript"><![CDATA[
+    window.addEventListener('load', () => {
+      Cu.import("resource:///modules/CustomSidebar.jsm").CustomSidebar.init(window);
+    }, { once: true });
+  ]]></script>
+
+  <vbox flex="1" style="padding: 5px;">
+    <vbox style="padding: 5px;">
+      <html:input id="url-textbox" 
+                  type="text"
+                  placeholder="Enter URL"
+                  style="margin-bottom: 10px; padding: 5px;"/>
+      
+      <button id="archive-button" 
+        label="Archive Current Page"
+        style="margin-bottom: 10px;"/>
+
+
+      <button id="fetch-button" 
+              label="Get Forecast"
+              style="margin-bottom: 10px;"/>
+    </vbox>
+    
+    <browser id="forecast-container" 
+             type="content"
+             style="background: transparent"
+             flex="1"/>
+  </vbox>
+</window>

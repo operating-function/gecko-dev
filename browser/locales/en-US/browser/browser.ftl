@@ -500,6 +500,15 @@ browser-import-button2 =
 
 bookmarks-toolbar-empty-message = For quick access, place your bookmarks here on the bookmarks toolbar. <a data-l10n-name="manage-bookmarks">Manage bookmarks…</a>
 
+## Custom Sidebar Menu
+#sidebar-custom-shortcut =
+#    .label = CustomSidebar
+#    .accesskey = C
+#    .modifiers = accel,alt
+#sidebar-custom-menu =
+#    .label = Custom Sidebar 
+#    .accesskey = C
+
 ## WebRTC Pop-up notifications
 
 popup-select-camera-device =

@@ -14,6 +14,10 @@
                       hidden="true" data-l10n-id="menu-file-new-container-tab">
                   <menupopup id="menu_newUserContextPopup" />
                 </menu>
+                <menuitem id="menu_customSidebar"
+                  class="menuitem-iconic"
+                  data-l10n-id="menu-file-custom-sidebar"
+                  command="cmd_viewCustomSidebar"/>
                 <menuitem id="menu_newNavigator"
                           key="key_newNavigator"
                           command="cmd_newNavigator" data-l10n-id="menu-file-new-window"/>

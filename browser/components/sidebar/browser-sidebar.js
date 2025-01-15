@@ -103,6 +103,18 @@ var SidebarController = {
         }),
       ],
       [
+        "viewCustomSidebar",
+        this.makeSidebar({
+          elementId: "sidebar-switcher-custom",
+          url: "chrome://browser/content/customsidebar/sidebar.xhtml",
+          menuId: "menu_customSidebar",
+          keyId: "viewCustomSidebarKb",
+          menuL10nId: "sidebar-custom-shortcut",
+          revampL10nId: "menu-file-custom-sidebar",
+          iconUrl: "chrome://browser/skin/history.svg", // Use appropriate icon
+        }),
+      ],
+      [
         "viewTabsSidebar",
         this.makeSidebar({
           elementId: "sidebar-switcher-tabs",

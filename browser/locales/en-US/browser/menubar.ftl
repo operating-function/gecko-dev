@@ -70,6 +70,13 @@ menu-file-open-location =
 menu-file-open-file =
     .label = Open File…
     .accesskey = O
+    ## Custom Sidebar Menu
+menu-file-custom-sidebar =
+    .key = C
+    .modifiers = accel,alt
+sidebar-custom-menu =
+    .label = Custom Sidebar 
+    .accesskey = C
 # Variables:
 #  $tabCount (Number): the number of tabs that are affected by the action.
 menu-file-close-tab =
