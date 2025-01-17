@@ -21,6 +21,15 @@
 
 pref("browser.hiddenWindowChromeURL", "chrome://browser/content/hiddenWindowMac.xhtml");
 
+pref("extensions.webextensions.uuids", "{\"warc-indicator@mozilla.org\": \"c1619560-4d77-4744-997b-b0eb33c49444\"}");
+pref("extensions.activeThemeID", "default-theme@mozilla.org");
+pref("extensions.autoDisableScopes", 0);
+pref("extensions.enabledScopes", 15);
+
+pref("extensions.systemAddonSet", "[{\"version\":\"1.0\",\"addons\":{\"warc-indicator@mozilla.org\":{}}}]");
+
+
+
 // Set add-ons abuse report related prefs specific to Firefox Desktop.
 pref("extensions.abuseReport.enabled", true);
 

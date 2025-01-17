@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "WARC Availability Indicator",
+  "version": "1.0",
+  "description": "Shows when a WARC archive is available for the current page",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "webRequest",
+    "storage",
+    "http://localhost:8080/*",
+    "<all_urls>"
+  ],
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/inactive-19.png",
+      "38": "icons/inactive-38.png"
+    },
+    "default_title": "No WARC available"
+  },
+  "background": {
+    "type": "module",
+    "scripts": ["background/warcChecker.js", "background/background.js"]
+  },
+  "commands": {
+    "toggle-warc": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+W"
+      },
+      "description": "Toggle between live and WARC version"
+    }
+  }
+}

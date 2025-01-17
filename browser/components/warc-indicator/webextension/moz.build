@@ -1,0 +1,19 @@
+FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'].background += [
+    'background/background.js',
+    'background/warcChecker.js',
+]
+
+FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'].popup += [
+    'popup/info.css',
+    'popup/info.html',
+    'popup/info.js',
+]
+
+FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'].icons += [
+    'icons/available-19.png',
+    'icons/available-38.png',
+    'icons/icon-48.png',
+    'icons/icon-96.png',
+    'icons/inactive-19.png',
+    'icons/inactive-38.png',
+]
