@@ -67,9 +67,11 @@ viewWarcButton.addEventListener("click", async () => {
   if (!currentUrl || !currentTabId) return;
 
   const tab = await browser.tabs.get(currentTabId);
-  if (currentUrl.startsWith(warcChecker.pywbEndpoint)) {
+  if (tab.url.startsWith(warcChecker.pywbEndpoint)) {
     // Switch to live version
-    const originalUrl = currentUrl.split("/mp_/")[1];
+    console.log("sidebar: switching to live version from", tab.url);
+    const originalUrl = tab.url.split("/mp_/")[1];
+    console.log("sidebar: original URL is", originalUrl);
     await browser.tabs.update(currentTabId, { url: originalUrl });
   } else {
     // Switch to archived version
