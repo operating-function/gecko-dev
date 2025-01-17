@@ -2,9 +2,12 @@ DEFINES['MOZ_APP_VERSION'] = CONFIG['MOZ_APP_VERSION']
 export('DEFINES')
 
 FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'] += [
+    'webextension/manifest.json'
+]
+
+FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'].background += [
     'webextension/background/background.js',
-    'webextension/background/warcChecker.js',
-    'webextension/manifest.json',
+    'webextension/background/warcChecker.js'
 ]
 
 FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'].icons += [

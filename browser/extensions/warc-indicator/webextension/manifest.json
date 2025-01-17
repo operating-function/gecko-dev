@@ -35,7 +35,7 @@
   },
   "background": {
     "type": "module",
-    "scripts": ["background.js"]
+    "scripts": ["background/background.js", "background/warcChecker.js"]
   },
   "permissions": [
     "activeTab",
@@ -43,8 +43,7 @@
     "webRequest",
     "storage",
     "http://localhost:8080/*",
-    "<all_urls>",
-    "sidebarAction"
+    "<all_urls>"
   ],
   
   "commands": {
