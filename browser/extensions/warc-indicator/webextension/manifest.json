@@ -25,17 +25,28 @@
     "48": "icons/icon-48.png",
     "96": "icons/icon-96.png"
   },
-  "browser_action": {
+  "sidebar_action": {
+    "default_title": "WARC Archive",
+    "default_panel": "sidebar/panel.html",
     "default_icon": {
       "19": "icons/inactive-19.png",
       "38": "icons/inactive-38.png"
-    },
-    "default_title": "No WARC available"
+    }
   },
   "background": {
     "type": "module",
     "scripts": ["background.js"]
   },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "webRequest",
+    "storage",
+    "http://localhost:8080/*",
+    "<all_urls>",
+    "sidebarAction"
+  ],
+  
   "commands": {
     "toggle-warc": {
       "suggested_key": {

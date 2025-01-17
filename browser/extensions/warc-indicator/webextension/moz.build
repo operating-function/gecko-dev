@@ -3,10 +3,10 @@ FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'].background += [
     'background/warcChecker.js',
 ]
 
-FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'].popup += [
-    'popup/info.css',
-    'popup/info.html',
-    'popup/info.js',
+FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'].sidebar += [
+    'sidebar/panel.css',
+    'sidebar/panel.html',
+    'sidebar/panel.js',
 ]
 
 FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'].icons += [

@@ -16,10 +16,10 @@ FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'].icons += [
     'webextension/icons/inactive-38.png',
 ]
 
-FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'].popup += [
-    'webextension/popup/info.css',
-    'webextension/popup/info.html',
-    'webextension/popup/info.js'
+FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'].sidebar += [
+    'webextension/sidebar/panel.css',
+    'webextension/sidebar/panel.html',
+    'webextension/sidebar/panel.js'
 ]
 
 with Files('**'):
