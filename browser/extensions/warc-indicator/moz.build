@@ -2,18 +2,25 @@ DEFINES['MOZ_APP_VERSION'] = CONFIG['MOZ_APP_VERSION']
 export('DEFINES')
 
 FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'] += [
-    'addon-manifest.json',
-    'install.rdf',
-    'webextension/manifest.json'
+    'webextension/background/background.js',
+    'webextension/background/warcChecker.js',
+    'webextension/manifest.json',
 ]
-# TODO maybe remove install.rdf?
 
-DIRS += ['webextension']
+FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'].icons += [
+    'webextension/icons/available-19.png',
+    'webextension/icons/available-38.png',
+    'webextension/icons/icon-48.png',
+    'webextension/icons/icon-96.png',
+    'webextension/icons/inactive-19.png',
+    'webextension/icons/inactive-38.png',
+]
 
-# TODO: maybe remove?
-BROWSER_CHROME_MANIFESTS += ['browser.ini']
-
-XPI_NAME = 'warc-indicator@mozilla.org'
+FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'].popup += [
+    'webextension/popup/info.css',
+    'webextension/popup/info.html',
+    'webextension/popup/info.js'
+]
 
 with Files('**'):
     BUG_COMPONENT = ('Firefox', 'General')

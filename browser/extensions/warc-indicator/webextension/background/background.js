@@ -12,18 +12,18 @@ async function updateIcon(tabId, url) {
   }
 
   const hasWarc = await warcChecker.checkAvailability(url);
-  
+
   browser.browserAction.setIcon({
     path: {
-      19: `icons/${hasWarc ? 'available' : 'inactive'}-19.png`,
-      38: `icons/${hasWarc ? 'available' : 'inactive'}-38.png`
+      19: `icons/${hasWarc ? "available" : "inactive"}-19.png`,
+      38: `icons/${hasWarc ? "available" : "inactive"}-38.png`,
     },
-    tabId: tabId
+    tabId: tabId,
   });
 
   browser.browserAction.setTitle({
-    title: hasWarc ? 'Click to view archived version' : 'No WARC available',
-    tabId: tabId
+    title: hasWarc ? "Click to view archived version" : "No WARC available",
+    tabId: tabId,
   });
 }
 

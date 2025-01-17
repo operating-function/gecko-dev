@@ -21,10 +21,10 @@
 
 pref("browser.hiddenWindowChromeURL", "chrome://browser/content/hiddenWindowMac.xhtml");
 
-// OPFN
 pref("extensions.installedDistroAddon.warc-indicator@mozilla.org", true);
-pref("extensions.systemAddonSet", `{"schema":1,"addons":{"warc-indicator@mozilla.org":{"version":"1.0"}}}`);
-pref("extensions.webextensions.uuids", "{\"warc-indicator@mozilla.org\": \"c1619560-4d77-4744-997b-b0eb33c49444\"}");
+pref("extensions.systemAddonSet", '{"schema":1,"addons":{"warc-indicator@mozilla.org":{"version":"1.0"}}}');
+pref("extensions.installDistroAddons", true);
+
 
 pref("extensions.activeThemeID", "default-theme@mozilla.org");
 
@@ -33,7 +33,7 @@ pref("extensions.activeThemeID", "default-theme@mozilla.org");
 pref("extensions.abuseReport.enabled", true);
 
 // Enables some extra Extension System Logging (can reduce performance)
-pref("extensions.logging.enabled", false);
+pref("extensions.logging.enabled", true);
 
 // Disables strict compatibility, making addons compatible-by-default.
 pref("extensions.strictCompatibility", false);
@@ -64,10 +64,10 @@ pref("extensions.systemAddon.update.enabled", true);
 
 // Disable add-ons that are not installed by the user in all scopes by default.
 // See the SCOPE constants in AddonManager.sys.mjs for values to use here.
-pref("extensions.autoDisableScopes", 15);
+pref("extensions.autoDisableScopes", 0);
 // Scopes to scan for changes at startup.
 // OPFN: changed from 0 to 31 to include ALL scopes
-pref("extensions.startupScanScopes", 4);
+pref("extensions.startupScanScopes", 31);
 
 pref("extensions.geckoProfiler.acceptedExtensionIds", "geckoprofiler@mozilla.com,quantum-foxfooding@mozilla.com,raptor@mozilla.org");
 
@@ -366,6 +366,11 @@ pref("browser.startup.windowsLaunchOnLogin.disableLaunchOnLoginPrompt", false);
 
 // Show an upgrade dialog on major upgrades.
 pref("browser.startup.upgradeDialog.enabled", false);
+
+// Enable verbose extension logging
+pref("extensions.logging.enabled", true);
+pref("extensions.webextensions.log.level", "debug");
+pref("extensions.webextensions.log.stdout", true);
 
 pref("browser.chrome.site_icons", true);
 // browser.warnOnQuit == false will override all other possible prompts when quitting or restarting

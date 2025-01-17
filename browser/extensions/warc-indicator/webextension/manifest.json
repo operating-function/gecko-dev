@@ -10,7 +10,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "hidden": false
+      "id": "warc-indicator@mozilla.org"
     }
   },
   "permissions": [
@@ -34,7 +34,7 @@
   },
   "background": {
     "type": "module",
-    "scripts": ["background/warcChecker.js", "background/background.js"]
+    "scripts": ["background.js"]
   },
   "commands": {
     "toggle-warc": {
