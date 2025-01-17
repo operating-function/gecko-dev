@@ -1,0 +1,19 @@
+DEFINES['MOZ_APP_VERSION'] = CONFIG['MOZ_APP_VERSION']
+export('DEFINES')
+
+FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'] += [
+    'addon-manifest.json',
+    'install.rdf',
+    'webextension/manifest.json'
+]
+# TODO maybe remove install.rdf?
+
+DIRS += ['webextension']
+
+# TODO: maybe remove?
+BROWSER_CHROME_MANIFESTS += ['browser.ini']
+
+XPI_NAME = 'warc-indicator@mozilla.org'
+
+with Files('**'):
+    BUG_COMPONENT = ('Firefox', 'General')

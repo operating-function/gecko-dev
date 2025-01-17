@@ -1,0 +1,9 @@
+# -*- Mode: python; indent-tabs-mode: nil; tab-width: 40 -*-
+# vim: set filetype=python:
+
+@depends('warc-indicator')
+def warc_indicator(warc_indicator):
+    return bool(warc_indicator)
+
+set_config('MOZ_WARC_INDICATOR', warc_indicator)
+set_define('MOZ_WARC_INDICATOR', warc_indicator)

@@ -1,0 +1,1 @@
+imply_option('warc-indicator', True)

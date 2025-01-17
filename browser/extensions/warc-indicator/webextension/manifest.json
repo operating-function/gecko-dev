@@ -3,6 +3,16 @@
   "name": "WARC Availability Indicator",
   "version": "1.0",
   "description": "Shows when a WARC archive is available for the current page",
+  "applications": {
+    "gecko": {
+      "id": "warc-indicator@mozilla.org"
+    }
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "hidden": false
+    }
+  },
   "permissions": [
     "activeTab",
     "tabs",

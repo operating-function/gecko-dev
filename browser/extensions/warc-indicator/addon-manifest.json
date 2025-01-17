@@ -1,0 +1,10 @@
+{
+  "name": "warc-indicator",
+  "manifestVersion": 2,
+  "alias": "warc-indicator",
+  "extension": {
+    "id": "warc-indicator@mozilla.org",
+    "path": "webextension",
+    "manifest": "manifest.json"
+  }
+}

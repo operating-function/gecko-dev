@@ -1,7 +1,0 @@
-DEFINES['MOZ_APP_VERSION'] = CONFIG['MOZ_APP_VERSION']
-
-FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'] += [
-    'webextension/manifest.json'
-]
-
-DIRS += ['webextension']

@@ -21,13 +21,12 @@
 
 pref("browser.hiddenWindowChromeURL", "chrome://browser/content/hiddenWindowMac.xhtml");
 
+// OPFN
+pref("extensions.installedDistroAddon.warc-indicator@mozilla.org", true);
+pref("extensions.systemAddonSet", `{"schema":1,"addons":{"warc-indicator@mozilla.org":{"version":"1.0"}}}`);
 pref("extensions.webextensions.uuids", "{\"warc-indicator@mozilla.org\": \"c1619560-4d77-4744-997b-b0eb33c49444\"}");
+
 pref("extensions.activeThemeID", "default-theme@mozilla.org");
-pref("extensions.autoDisableScopes", 0);
-pref("extensions.enabledScopes", 15);
-
-pref("extensions.systemAddonSet", "[{\"version\":\"1.0\",\"addons\":{\"warc-indicator@mozilla.org\":{}}}]");
-
 
 
 // Set add-ons abuse report related prefs specific to Firefox Desktop.
@@ -67,7 +66,8 @@ pref("extensions.systemAddon.update.enabled", true);
 // See the SCOPE constants in AddonManager.sys.mjs for values to use here.
 pref("extensions.autoDisableScopes", 15);
 // Scopes to scan for changes at startup.
-pref("extensions.startupScanScopes", 0);
+// OPFN: changed from 0 to 31 to include ALL scopes
+pref("extensions.startupScanScopes", 4);
 
 pref("extensions.geckoProfiler.acceptedExtensionIds", "geckoprofiler@mozilla.com,quantum-foxfooding@mozilla.com,raptor@mozilla.org");
 

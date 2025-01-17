@@ -70,7 +70,6 @@ DIRS += [
     "translations",
     "uitour",
     "urlbar",
-    "warc-indicator",
 ]
 
 DIRS += ["build"]
