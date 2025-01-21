@@ -45,7 +45,7 @@
     "http://localhost:8080/*",
     "<all_urls>"
   ],
-  
+
   "commands": {
     "toggle-warc": {
       "suggested_key": {

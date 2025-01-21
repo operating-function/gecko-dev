@@ -1,0 +1,13 @@
+FINAL_TARGET_FILES.features['warc-recorder@mozilla.org'].background += [
+    'background/background.js',
+]
+
+FINAL_TARGET_FILES.features['warc-recorder@mozilla.org'].sidebar += [
+    'sidebar/panel.css',
+    'sidebar/panel.html',
+    'sidebar/panel.js',
+]
+
+FINAL_TARGET_FILES.features['warc-recorder@mozilla.org'].icons += [
+    'icons/pen.svg',
+]

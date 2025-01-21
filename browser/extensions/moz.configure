@@ -1,1 +1,2 @@
 imply_option('warc-indicator', True)
+imply_option('warc-recorder', True)

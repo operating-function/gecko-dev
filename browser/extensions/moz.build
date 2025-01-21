@@ -12,4 +12,5 @@ DIRS += [
     "pictureinpicture",
     "search-detection",
     "warc-indicator",
+    "warc-recorder",
 ]

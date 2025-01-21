@@ -1,6 +1,6 @@
 import { WarcChecker } from "/background/warcChecker.js";
 
-console.log("sidebar: panel.js loaded");
+console.log("warc playback sidebar: panel.js loaded");
 
 const warcChecker = new WarcChecker();
 const statusIcon = document.getElementById("status-icon");
@@ -12,7 +12,7 @@ let currentTabId = null;
 
 async function updateStatus(url) {
   console.log("sidebar: updateStatus called for", url);
-  
+
   if (!url || url === "about:blank") {
     statusIcon.className = "";
     statusText.textContent = "No page loaded";
@@ -27,15 +27,17 @@ async function updateStatus(url) {
   try {
     const hasWarc = await warcChecker.checkAvailability(url);
     console.log("sidebar: WARC availability:", hasWarc);
-    
+
     statusIcon.className = hasWarc ? "available" : "unavailable";
-    
+
     if (url.startsWith(warcChecker.pywbEndpoint)) {
       statusText.textContent = "Viewing archived version";
       viewWarcButton.textContent = "View Live Version";
       viewWarcButton.disabled = false;
     } else {
-      statusText.textContent = hasWarc ? "WARC archive available!" : "No WARC archive available";
+      statusText.textContent = hasWarc
+        ? "WARC archive available!"
+        : "No WARC archive available";
       viewWarcButton.textContent = "View Archived Version";
       viewWarcButton.disabled = !hasWarc;
     }
@@ -48,7 +50,7 @@ async function updateStatus(url) {
 }
 
 // Listen for tab changes
-browser.tabs.onActivated.addListener(async (activeInfo) => {
+browser.tabs.onActivated.addListener(async activeInfo => {
   console.log("sidebar: tab activated");
   currentTabId = activeInfo.tabId;
   const tab = await browser.tabs.get(activeInfo.tabId);
@@ -71,7 +73,9 @@ viewWarcButton.addEventListener("click", async () => {
     // Switch to live version
     console.log("sidebar: switching to live version from", tab.url);
     // Extract original URL from pywb replay URL
-    const match = tab.url.match(/^http:\/\/localhost:8080\/local\/(?:\d+|mp_)\/(.+)$/);
+    const match = tab.url.match(
+      /^http:\/\/localhost:8080\/local\/(?:\d+|mp_)\/(.+)$/
+    );
     const originalUrl = match ? match[1] : null;
     console.log("sidebar: extracted original URL:", originalUrl);
     console.log("sidebar: original URL is", originalUrl);
@@ -93,7 +97,7 @@ browser.tabs.query({ active: true, currentWindow: true }).then(tabs => {
 });
 
 // Listen for status updates from background script
-browser.runtime.onMessage.addListener((message) => {
+browser.runtime.onMessage.addListener(message => {
   console.log("sidebar: received message", message);
   if (message.type === "warc-status-update") {
     updateStatus(message.url);

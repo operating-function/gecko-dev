@@ -1,0 +1,46 @@
+{
+  "manifest_version": 2,
+  "name": "WARC Recorder",
+  "version": "1.0",
+  "description": "Records web traffic in WARC format",
+  "applications": {
+    "gecko": {
+      "id": "warc-recorder@mozilla.org"
+    }
+  },
+
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "http://localhost:12345/",
+    "activeTab",
+    "tabs",
+    "storage",
+    "http://localhost:8080/*",
+    "<all_urls>"
+  ],
+
+  "background": {
+    "type": "module",
+    "scripts": ["background/background.js"]
+  },
+
+  "icons": {
+    "48": "icons/pen.svg"
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "warc-recorder@mozilla.org"
+    }
+  },
+
+  "sidebar_action": {
+    "default_title": "WARC Recorder",
+    "default_panel": "sidebar/panel.html",
+    "default_icon": {
+      "19": "icons/pen.svg",
+      "38": "icons/pen.svg"
+    }
+  }
+}
