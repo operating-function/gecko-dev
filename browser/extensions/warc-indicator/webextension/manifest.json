@@ -1,0 +1,57 @@
+{
+  "manifest_version": 2,
+  "name": "WARC Availability Indicator",
+  "version": "1.0",
+  "description": "Shows when a WARC archive is available for the current page",
+  "applications": {
+    "gecko": {
+      "id": "warc-indicator@mozilla.org"
+    }
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "warc-indicator@mozilla.org"
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "webRequest",
+    "storage",
+    "http://localhost:8080/*",
+    "<all_urls>"
+  ],
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  },
+  "sidebar_action": {
+    "default_title": "WARC Archive",
+    "default_panel": "sidebar/panel.html",
+    "default_icon": {
+      "19": "icons/inactive-19.png",
+      "38": "icons/inactive-38.png"
+    }
+  },
+  "background": {
+    "type": "module",
+    "scripts": ["background/background.js", "background/warcChecker.js"]
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "webRequest",
+    "storage",
+    "http://localhost:8080/*",
+    "<all_urls>"
+  ],
+  
+  "commands": {
+    "toggle-warc": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+W"
+      },
+      "description": "Toggle between live and WARC version"
+    }
+  }
+}

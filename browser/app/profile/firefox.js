@@ -21,11 +21,19 @@
 
 pref("browser.hiddenWindowChromeURL", "chrome://browser/content/hiddenWindowMac.xhtml");
 
+pref("extensions.installedDistroAddon.warc-indicator@mozilla.org", true);
+pref("extensions.systemAddonSet", '{"schema":1,"addons":{"warc-indicator@mozilla.org":{"version":"1.0"}}}');
+pref("extensions.installDistroAddons", true);
+
+
+pref("extensions.activeThemeID", "default-theme@mozilla.org");
+
+
 // Set add-ons abuse report related prefs specific to Firefox Desktop.
 pref("extensions.abuseReport.enabled", true);
 
 // Enables some extra Extension System Logging (can reduce performance)
-pref("extensions.logging.enabled", false);
+pref("extensions.logging.enabled", true);
 
 // Disables strict compatibility, making addons compatible-by-default.
 pref("extensions.strictCompatibility", false);
@@ -56,9 +64,10 @@ pref("extensions.systemAddon.update.enabled", true);
 
 // Disable add-ons that are not installed by the user in all scopes by default.
 // See the SCOPE constants in AddonManager.sys.mjs for values to use here.
-pref("extensions.autoDisableScopes", 15);
+pref("extensions.autoDisableScopes", 0);
 // Scopes to scan for changes at startup.
-pref("extensions.startupScanScopes", 0);
+// OPFN: changed from 0 to 31 to include ALL scopes
+pref("extensions.startupScanScopes", 31);
 
 pref("extensions.geckoProfiler.acceptedExtensionIds", "geckoprofiler@mozilla.com,quantum-foxfooding@mozilla.com,raptor@mozilla.org");
 
@@ -358,6 +367,11 @@ pref("browser.startup.windowsLaunchOnLogin.disableLaunchOnLoginPrompt", false);
 // Show an upgrade dialog on major upgrades.
 pref("browser.startup.upgradeDialog.enabled", false);
 
+// Enable verbose extension logging
+pref("extensions.logging.enabled", true);
+pref("extensions.webextensions.log.level", "debug");
+pref("extensions.webextensions.log.stdout", true);
+
 pref("browser.chrome.site_icons", true);
 // browser.warnOnQuit == false will override all other possible prompts when quitting or restarting
 pref("browser.warnOnQuit", true);
@@ -635,7 +649,11 @@ pref("browser.urlbar.sponsoredTopSites", false);
 
 // Global toggle for whether the show search terms feature
 // can be used at all, and enabled/disabled by the user.
+#if defined(EARLY_BETA_OR_EARLIER)
+pref("browser.urlbar.showSearchTerms.featureGate", true);
+#else
 pref("browser.urlbar.showSearchTerms.featureGate", false);
+#endif
 
 // If true, show the search term in the Urlbar while on
 // a default search engine results page.
@@ -2019,6 +2037,8 @@ pref("browser.newtabpage.activity-stream.hideTopSitesWithSearchParam", "mfadid=a
 pref("browser.aboutwelcome.enabled", true);
 // Used to set multistage welcome UX
 pref("browser.aboutwelcome.screens", "");
+// Used to enable window modal onboarding
+pref("browser.aboutwelcome.showModal", false);
 
 // Experiment Manager
 // See Console.sys.mjs LOG_LEVELS for all possible values
@@ -2262,9 +2282,6 @@ pref("privacy.trackingprotection.fingerprinting.enabled", true);
 
 // Enable cryptomining blocking by default for all channels, only on desktop.
 pref("privacy.trackingprotection.cryptomining.enabled", true);
-
-// Skip earlyBlankFirstPaint by default if resistFingerprinting is enabled.
-pref("privacy.resistFingerprinting.skipEarlyBlankFirstPaint", true);
 
 pref("browser.contentblocking.database.enabled", true);
 
@@ -3314,12 +3331,8 @@ pref("browser.backup.template.fallback-download.aurora", "https://www.mozilla.or
 pref("browser.backup.template.fallback-download.nightly", "https://www.mozilla.org/firefox/channel/desktop/?utm_medium=firefox-desktop&utm_source=backup&utm_campaign=firefox-backup-2024&utm_content=control#nightly");
 pref("browser.backup.template.fallback-download.esr", "https://www.mozilla.org/firefox/enterprise/?utm_medium=firefox-desktop&utm_source=backup&utm_campaign=firefox-backup-2024&utm_content=control#download");
 
-#ifdef NIGHTLY_BUILD
-  // Pref to enable the new profiles
-  pref("browser.profiles.enabled", true);
-#else
-  pref("browser.profiles.enabled", false);
-#endif
+// Pref to enable the new profiles
+pref("browser.profiles.enabled", false);
 pref("browser.profiles.profile-name.updated", false);
 // Whether to allow the user to merge profile data
 pref("browser.profiles.sync.allow-danger-merge", false);

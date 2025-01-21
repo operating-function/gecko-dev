@@ -1,0 +1,29 @@
+DEFINES['MOZ_APP_VERSION'] = CONFIG['MOZ_APP_VERSION']
+export('DEFINES')
+
+FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'] += [
+    'webextension/manifest.json'
+]
+
+FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'].background += [
+    'webextension/background/background.js',
+    'webextension/background/warcChecker.js'
+]
+
+FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'].icons += [
+    'webextension/icons/available-19.png',
+    'webextension/icons/available-38.png',
+    'webextension/icons/icon-48.png',
+    'webextension/icons/icon-96.png',
+    'webextension/icons/inactive-19.png',
+    'webextension/icons/inactive-38.png',
+]
+
+FINAL_TARGET_FILES.features['warc-indicator@mozilla.org'].sidebar += [
+    'webextension/sidebar/panel.css',
+    'webextension/sidebar/panel.html',
+    'webextension/sidebar/panel.js'
+]
+
+with Files('**'):
+    BUG_COMPONENT = ('Firefox', 'General')
