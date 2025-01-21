@@ -70,7 +70,10 @@ viewWarcButton.addEventListener("click", async () => {
   if (tab.url.startsWith(warcChecker.pywbEndpoint)) {
     // Switch to live version
     console.log("sidebar: switching to live version from", tab.url);
-    const originalUrl = tab.url.split("/mp_/")[1];
+    // Extract original URL from pywb replay URL
+    const match = tab.url.match(/^http:\/\/localhost:8080\/local\/(?:\d+|mp_)\/(.+)$/);
+    const originalUrl = match ? match[1] : null;
+    console.log("sidebar: extracted original URL:", originalUrl);
     console.log("sidebar: original URL is", originalUrl);
     await browser.tabs.update(currentTabId, { url: originalUrl });
   } else {

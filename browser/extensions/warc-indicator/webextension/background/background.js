@@ -44,7 +44,10 @@ browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 async function toggleWarcMode(tab) {
   if (tab.url.startsWith(warcChecker.pywbEndpoint)) {
     // We're in WARC mode, get original URL
-    const originalUrl = tab.url.split("/mp_/")[1];
+    // Extract original URL from pywb replay URL
+    const match = tab.url.match(/^http:\/\/localhost:8080\/local\/(?:\d+|mp_)\/(.+)$/);
+    const originalUrl = match ? match[1] : null;
+    console.log("background: extracted original URL:", originalUrl);
     await browser.tabs.update(tab.id, { url: originalUrl });
     warcModeTabs.delete(tab.id);
   } else {
