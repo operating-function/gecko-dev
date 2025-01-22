@@ -36,5 +36,23 @@
       "appDisabled": false,
       "installDate": 1705507200000
     }
+    {
+      "id": "url-icon@mozilla.org",
+      "syncGUID": "{e1619560-4d77-4744-997b-b0eb33c49444}",
+      "version": "1.0",
+      "type": "extension",
+      "loader": null,
+      "updateDate": 1705507200000,
+      "path": "features/url-icon@mozilla.org",
+      "defaultLocale": {
+        "name": "URL Icon test",
+        "description": "Just a little test icon",
+      },
+      "visible": true,
+      "active": true,
+      "userDisabled": false,
+      "appDisabled": false,
+      "installDate": 1705507200000
+    }
   ]
 }

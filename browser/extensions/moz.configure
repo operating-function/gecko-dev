@@ -1,3 +1,4 @@
 imply_option('warc-indicator', True)
 imply_option('warc-recorder', True)
 imply_option('peer-sidebar', True)
+imply_option('url-icon', True)

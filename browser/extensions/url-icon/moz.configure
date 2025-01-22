@@ -1,0 +1,9 @@
+# -*- Mode: python; indent-tabs-mode: nil; tab-width: 40 -*-
+# vim: set filetype=python:
+
+@depends('url-icon')
+def url_icon(url_icon):
+    return bool(url_icon)
+
+set_config('MOZ_URL_ICON', url_icon)
+set_define('MOZ_URL_ICON', url_icon)

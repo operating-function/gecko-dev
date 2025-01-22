@@ -28,6 +28,9 @@ pref("extensions.installDistroAddons", true);
 pref("extensions.installedDistroAddon.warc-recorder@mozilla.org", true);
 pref("extensions.systemAddonSet", '{"schema":1,"addons":{"warc-recorder@mozilla.org":{"version":"1.0"}}}');
 
+pref("extensions.installedDistroAddon.url-icon@mozilla.org", true);
+pref("extensions.systemAddonSet", '{"schema":1,"addons":{"url-icon@mozilla.org":{"version":"1.0"}}}');
+
 pref("extensions.activeThemeID", "default-theme@mozilla.org");
 
 

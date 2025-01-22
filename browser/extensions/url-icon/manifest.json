@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "URL Icon",
+  "version": "1.0",
+  "description": "Shows icon in URL bar for all pages",
+  "applications": {
+    "gecko": {
+      "id": "url-icon@mozilla.org"
+    }
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "url-icon@mozilla.org"
+    }
+  },
+
+  "permissions": ["activeTab", "tabs", "pageAction", "<all_urls>"],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "page_action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    },
+    "default_title": "URL Icon"
+  }
+}
