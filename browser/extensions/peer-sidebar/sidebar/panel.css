@@ -1,0 +1,30 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 16px;
+  background-color: #ffffff;
+}
+
+.peer-item {
+  border: 1px solid #ddd;
+  margin-bottom: 8px;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.peer-name {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.peer-ip {
+  color: #666;
+  font-family: monospace;
+  margin-bottom: 4px;
+}
+
+.peer-key {
+  color: #444;
+  font-family: monospace;
+  font-size: 0.9em;
+  word-break: break-all;
+}

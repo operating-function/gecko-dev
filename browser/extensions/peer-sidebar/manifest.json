@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Peer Sidebar",
+  "version": "1.0",
+  "description": "Shows peer information in a sidebar",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "peer-sidebar@mozilla.org"
+    }
+  },
+  "icons": {
+    "48": "icon.png",
+    "96": "icon.png"
+  },
+  "permissions": [
+    "http://localhost:8000/*"
+  ],
+  "sidebar_action": {
+    "default_title": "Peer List",
+    "default_panel": "sidebar/panel.html",
+    "default_icon": "icon.png"
+  }
+}

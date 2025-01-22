@@ -13,4 +13,5 @@ DIRS += [
     "search-detection",
     "warc-indicator",
     "warc-recorder",
+    "peer-sidebar",
 ]
