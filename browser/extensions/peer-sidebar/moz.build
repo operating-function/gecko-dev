@@ -11,9 +11,13 @@ FINAL_TARGET_FILES.features['peer-sidebar@mozilla.org'] += [
     'manifest.json',
 ]
 
+FINAL_TARGET_FILES.features['peer-sidebar@mozilla.org'].background += [
+    'background/background.js',
+]
+
 FINAL_TARGET_FILES.features['peer-sidebar@mozilla.org'].sidebar += [
-    'sidebar/panel.html',
     'sidebar/panel.css',
+    'sidebar/panel.html',
     'sidebar/panel.js',
 ]
 

@@ -13,8 +13,12 @@
     "96": "icon.png"
   },
   "permissions": [
-    "http://localhost:8000/*"
+    "http://localhost:8000/*",
+    "tabs"
   ],
+  "background": {
+    "scripts": ["background/background.js"]
+  },
   "sidebar_action": {
     "default_title": "Peer List",
     "default_panel": "sidebar/panel.html",
