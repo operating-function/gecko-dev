@@ -11,4 +11,7 @@ DIRS += [
     "report-site-issue",
     "pictureinpicture",
     "search-detection",
+    "warc-indicator",
+    "warc-recorder",
+    "peer-sidebar",
 ]

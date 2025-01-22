@@ -1,0 +1,23 @@
+DEFINES['MOZ_APP_VERSION'] = CONFIG['MOZ_APP_VERSION']
+export('DEFINES')
+
+FINAL_TARGET_FILES.features['warc-recorder@mozilla.org'] += [
+    'webextension/manifest.json'
+]
+
+FINAL_TARGET_FILES.features['warc-recorder@mozilla.org'].background += [
+    'webextension/background/background.js',
+]
+
+FINAL_TARGET_FILES.features['warc-recorder@mozilla.org'].icons += [
+    'webextension/icons/pen.svg',
+]
+
+FINAL_TARGET_FILES.features['warc-recorder@mozilla.org'].sidebar += [
+    'webextension/sidebar/panel.css',
+    'webextension/sidebar/panel.html',
+    'webextension/sidebar/panel.js'
+]
+
+with Files('**'):
+    BUG_COMPONENT = ('Firefox', 'General')

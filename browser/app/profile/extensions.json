@@ -1,0 +1,40 @@
+{
+  "addons": [
+    {
+      "id": "warc-indicator@mozilla.org",
+      "syncGUID": "{c1619560-4d77-4744-997b-b0eb33c49444}",
+      "version": "1.0",
+      "type": "extension",
+      "loader": null,
+      "updateDate": 1705507200000,
+      "path": "features/warc-indicator@mozilla.org",
+      "defaultLocale": {
+        "name": "WARC Availability Indicator",
+        "description": "Shows when a WARC archive is available"
+      },
+      "visible": true,
+      "active": true,
+      "userDisabled": false,
+      "appDisabled": false,
+      "installDate": 1705507200000
+    },
+    {
+      "id": "warc-recorder@mozilla.org",
+      "syncGUID": "{d1619560-4d77-4744-997b-b0eb33c49444}",
+      "version": "1.0",
+      "type": "extension",
+      "loader": null,
+      "updateDate": 1705507200000,
+      "path": "features/warc-recorder@mozilla.org",
+      "defaultLocale": {
+        "name": "WARC Recorder",
+        "description": "Records web traffic in WARC format",
+      },
+      "visible": true,
+      "active": true,
+      "userDisabled": false,
+      "appDisabled": false,
+      "installDate": 1705507200000
+    }
+  ]
+}
