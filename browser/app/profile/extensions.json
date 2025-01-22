@@ -46,7 +46,7 @@
       "path": "features/url-icon@mozilla.org",
       "defaultLocale": {
         "name": "URL Icon test",
-        "description": "Just a little test icon",
+        "description": "Just a little test icon"
       },
       "visible": true,
       "active": true,

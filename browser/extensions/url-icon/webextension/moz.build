@@ -1,0 +1,9 @@
+FINAL_TARGET_FILES.features['url-icon@mozilla.org'] += [
+    'background.js',
+    'manifest.json',
+]
+
+FINAL_TARGET_FILES.features['url-icon@mozilla.org'].icons += [
+    'icons/icon16.png',
+    'icons/icon32.png',
+]

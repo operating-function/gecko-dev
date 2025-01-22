@@ -8,13 +8,13 @@ DEFINES["MOZ_APP_VERSION"] = CONFIG["MOZ_APP_VERSION"]
 DEFINES["MOZ_APP_MAXVERSION"] = CONFIG["MOZ_APP_MAXVERSION"]
 
 FINAL_TARGET_FILES.features["url-icon@mozilla.org"] += [
-    "webextension/background.js",
-    "webextension/manifest.json",
+    "background.js",
+    "manifest.json",
 ]
 
 FINAL_TARGET_FILES.features["url-icon@mozilla.org"].icons += [
-    "webextension/icons/icon16.png",
-    "webextension/icons/icon32.png",
+    "icons/icon16.png",
+    "icons/icon32.png",
 ]
 
 with Files('**'):
